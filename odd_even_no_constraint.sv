@@ -1,6 +1,6 @@
 
 //constraint for odd & even number generation
-/*
+
 class test;
   
   rand bit [4:0] a[];
