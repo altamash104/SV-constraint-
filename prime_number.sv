@@ -40,7 +40,7 @@ class prime_numbers;
                         end
                       end
                   endmodule
-                  */
+                  
 
 // another way of doing  prime number
 class test;
