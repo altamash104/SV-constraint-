@@ -1,4 +1,4 @@
-class packet;
+class test;
 
 	bit[3:0]a;
 	int q[$];
@@ -9,7 +9,7 @@ class packet;
 		$display("value of a =%0d q=%0p ",a,q);
 	endfunction
 	
-	constraint c{foreach (q[i])
+	constraint x{foreach (q[i])
 		a!=q[i];
 		}
 		
@@ -17,22 +17,22 @@ endclass
 
 module top;
 
-packet p;
+test t;
 	initial
 		begin
-		p=new;
+		t=new;
 		
 			for(int i=0;i<15;i++)
 			begin
         		if(i==0)
 			begin
-			    p.c.constraint_mode(0);
-			    p.randomize(a);
+			    t.c.constraint_mode(0);
+			    t.randomize(a);
 			end
 			else
 			  begin
-			    p.c.constraint_mode(1);
-			    p.randomize(a);
+			    t.c.constraint_mode(1);
+			    t.randomize(a);
 			  end
 		end
 	end
