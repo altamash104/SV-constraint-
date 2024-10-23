@@ -6,7 +6,7 @@ class packet;
 	function void post_randomize();
 		
 		q.push_back(a);
-		$display("value of a =%0d",a);
+		$display("value of a =%0d q=%0p ",a,q);
 	endfunction
 	
 	constraint c{foreach (q[i])
