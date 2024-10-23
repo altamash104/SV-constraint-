@@ -36,4 +36,11 @@ test t;
 			  end
 		end
 	end
+/*initial // we can also achieve this by doing simply this but above solution is very detail
+    begin
+      t=new;
+      repeat(20)begin
+      t.randomize(a);
+    end
+    end*/
 endmodule
