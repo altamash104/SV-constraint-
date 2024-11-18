@@ -3,7 +3,7 @@ class sample;
   rand bit [32:0] leap_year;
   
   constraint leap{
-    leap_year inside {[1000:2100]};
+    leap_year inside {[1:2024]};
    leap_year%4==0;
    leap_year%100==0 -> leap_year%400==0;
   }
