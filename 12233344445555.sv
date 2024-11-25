@@ -1,5 +1,5 @@
 //1 22 333 4444 55555
-
+//hard coded
 class test;
   rand int a[];
   
@@ -32,3 +32,34 @@ module top;
     t.randomize();
   end
 endmodule
+
+//////////////////////////////////////////////////////////////////////
+//soft coded
+class ab;
+  rand longint b[$];
+  rand longint a[];
+  
+  constraint c1{a.size==9;}
+  constraint c2{foreach(a[i])
+    a[i]==i+1;}
+  
+  function void post_randomize();
+    foreach (a[i])
+      repeat(i+1)
+        b.push_back(a[i]);
+        //$display("%0p",b);
+    
+    foreach(b[i])
+      $write("%0d",b[i]); // if we use $display in queue it will print vertically
+  endfunction
+endclass
+
+module test;
+  ab a;
+  initial
+    begin
+      a=new();
+      a.randomize();
+    end
+endmodule
+
