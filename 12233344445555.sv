@@ -35,31 +35,31 @@ endmodule
 
 //////////////////////////////////////////////////////////////////////
 //soft coded
-class ab;
-  rand longint b[$];
-  rand longint a[];
+class test;
   
-  constraint c1{a.size==9;}
-  constraint c2{foreach(a[i])
+  rand int a[];
+  int i;
+  
+  constraint x{a.size==8;}
+  constraint y{foreach (a[i])
     a[i]==i+1;}
   
   function void post_randomize();
-    foreach (a[i])
-      repeat(i+1)
-        b.push_back(a[i]);
-        //$display("%0p",b);
-    
-    foreach(b[i])
-      $write("%0d",b[i]); // if we use $display in queue it will print vertically
+    foreach(a[i])
+      repeat(a[i])
+        //$display("%0d",a[i]);
+    $write("%0d",a[i]);
   endfunction
+  
 endclass
 
-module test;
-  ab a;
+module top;
+  test t;
+  
   initial
     begin
-      a=new();
-      a.randomize();
+    t=new;
+    t.randomize();
     end
 endmodule
 
