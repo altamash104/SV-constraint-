@@ -40,7 +40,7 @@ class test;
   rand int a[];
   int i;
   
-  constraint x{a.size==8;}
+  constraint x{a.size==5;}
   constraint y{foreach (a[i])
     a[i]==i+1;}
   
