@@ -13,7 +13,14 @@ class  test;
     else
       a='z;
   endfunction
-  
+ /* 
+ Note-
+ 'x' and 'z' are special keywords in SystemVerilog that represent the unknown and high-impedance states,
+ it's necessary to use a single quote to identify them. 
+ Without the single quote, they would just be seen as normal text or identifiers that don't have a predefined meaning 
+ in this context.
+That's why a = 'x; and a = 'z; are the correct ways to assign unknown and high-impedance values.
+*/
 endclass
 
 module top;
