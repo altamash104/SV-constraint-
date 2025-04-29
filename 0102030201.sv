@@ -3,12 +3,12 @@
 class cons;
  // int g;
   rand int a[];
-  constraint x{a.size()==17;}
+ constraint x{a.size()==10;}
   //g=a.size/2;
   constraint y{foreach(a[i])
     if(i%2==0)
       a[i]==0;
-               else if(i<(a.size/2))
+               else if(i<=(a.size/2))
                  a[i]== (i+1)/2;
               
               else
