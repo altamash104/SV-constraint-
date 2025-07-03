@@ -13,6 +13,15 @@ class  test;
     else
       a='z;
   endfunction
+//Another way
+  //  function void post_randomize();
+  //   case(flag)
+  //     2'b00: a=0;
+  //     2'b01: a=1;
+  //     2'b10: a='x;
+  //     2'b11: a='z;
+  //   endcase
+  // endfunction
  /* 
  Note-
  'x' and 'z' are special keywords in SystemVerilog that represent the unknown and high-impedance states,
