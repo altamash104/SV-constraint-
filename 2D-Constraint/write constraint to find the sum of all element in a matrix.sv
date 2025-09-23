@@ -8,7 +8,7 @@ class test;
     sum=0;
     foreach(a[i])
       begin
-        foreach(a[i,j])
+        foreach(a[j])
           begin
             $write("%0d",a[i][j]);
           end
