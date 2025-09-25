@@ -5,11 +5,11 @@ module test;
       for(int i=1;i<=n;i++)begin
         
         for(int j=1;j<=n-i;j++)begin
-          $write(" ");
+          $write(" ");//for space printing ,don't do $write("")
         end
         
         for(int k=1;k<=i;k++)begin
-          $write("*");
+          $write("*");//for star printing
         end
         $display("");
       end
