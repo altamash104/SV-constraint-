@@ -1,18 +1,23 @@
-
 module test;
+  
   int a[];
+  int q[$];
   
   initial
     begin
-      a=new[6];
-      a='{1, 3, 2, 3, 4, 1};
+      a=new[7];
+      a='{1,3,2,3,4,1,4};
       
-      for(int i=0;i<a.size;i++)begin
-        for(int j=i+1;j<a.size;j++)begin
-          if(a[i]==a[j])begin
-            $display("Duplicate value=%0d",a[i]);
-        end
-      end
-    end
+      a.sort();
+      $display("sorted array=%0p",a);
+      
+      q.push_back(a[0]);
+      for(int i=1;i<a.size;i++)
+        begin
+        if(a[i]!=a[i-1])
+          q.push_back(a[i]);
+    	end
+  
+    $display("Unique elements queue = %0p", q);
     end
 endmodule
