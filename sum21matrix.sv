@@ -1,4 +1,40 @@
 class test;
+  rand int a[4][4];
+  
+  constraint c1{foreach (a[i,j]) a[i][j] inside {[0:10]};}
+    
+    constraint c2{foreach(a[i])
+      a[i][0]+a[i][1]+a[i][2]+a[i][3]==21;}
+    
+    constraint c3{foreach(a[j])
+      a[0][j]+a[1][j]+a[2][j]+a[3][j]==21;}
+    
+    function void post_randomize();
+                             
+      foreach(a[i])begin
+        foreach(a[j])begin
+          $write(a[i][j]);
+         end
+          $display();
+       end                  
+                             
+    endfunction
+
+endclass
+    
+    module top;
+      test t;
+      initial
+        begin
+          t=new();
+          t.randomize();
+   
+        end
+    endmodule
+
+
+//Another method
+class test;
   rand bit[4:0] matrix[4][4]; 
     
     
