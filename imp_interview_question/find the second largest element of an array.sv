@@ -13,8 +13,9 @@ module test;
       
       for(int i=0;i<a.size();i++)begin
         if(a[i]>largest)begin//if any element in the array is larger than last known largest element,
+          largest=a[i];//Then a[i] is the new largest 
           second_largest=largest;//then previous largest become the second largest
-          largest=a[i];
+          
         end
       else if (a[i] > second_largest && a[i]!=largest) 
         begin 
